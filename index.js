@@ -7,6 +7,7 @@ const app = express()
 app.use(express.json())
 app.use(morgan('tiny'))
 app.use(cors())
+app.use(express.static('build'))
 
 const generateId = () => {
   const maxId = persons.length > 0
