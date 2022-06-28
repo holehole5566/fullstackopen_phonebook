@@ -11,15 +11,6 @@ app.use(express.json())
 app.use(morgan('tiny'))
 app.use(cors())
 
-const generateId = () => {
-  const maxId = persons.length > 0
-    ? Math.max(...persons.map(n => n.id))
-    : 0
-  return maxId + 1
-}
-
-
-
 let persons = []
 
 app.get('/api/persons', (request, response) => {
